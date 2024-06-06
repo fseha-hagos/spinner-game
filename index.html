@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body >
+    
+    <div id="particles-js"></div>
+    <div class="count-particles"><span class="js-count-particles"></span></div> 
+    
+    <div class="container">
+        <div class="header">
+            <h1>WINNER : <span id="winner">NONE</span></h1>
+            
+        </div>
+        
+        <div class="wheel-container">
+            <div class="wheel">
+                <canvas class="" id="canvas" width="500" height="500"></canvas>
+                <div class="center-circle" onclick="spin()">
+                    <div class="triangle"></div>
+                </div>
+            </div>
+
+            
+        </div>
+        <div class="inputArea" onchange="createWheel()">
+            <textarea rows="20" cols="30"></textarea>
+        </div>
+       
+    </div>
+
+    <audio src="./assets/audio/bike-back-wheel-coasting-74816.mp3" controls></audio>
+
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
+    <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+   
+   <script src="script.js" ></script>
+      
+</body>
+
+</html>
