@@ -27,7 +27,16 @@ const centerX = width/2
 const centerY = height/2
 const radius = width/2
 
-let items = document.getElementsByTagName("textarea")[0].value.split("\n");
+let textAre = document.getElementsByTagName("textarea");
+let items = textAre[0].value.split("\n");
+let spinBtn = document.getElementsByClassName("center-circle");
+//let textArea = documnet.getElementsByTagName("textarea");
+
+//let spinMusic = document.getElementById("spin-music");
+let usualMusic = document.getElementById("usual-music")
+let winnerMusic = document.getElementById("winner-music")
+
+//window.onload(usualMusic.play());
 
 let currentDeg = 0
 let step = 360/items.length
@@ -35,15 +44,24 @@ let colors = []
 let itemDegs = {}
 
 for(let i = 0 ; i < items.length + 1;i++){
-    colors.push(randomColor())
+    if(items[i] !== ""){
+        colors.push(randomColor())
+    } 
+}
+function playm(){
+    usualMusic.play()
+
 }
 
 function createWheel(){
+   
     items = document.getElementsByTagName("textarea")[0].value.split("\n");
     step = 360/items.length
     colors = []
     for(let i = 0 ; i < items.length + 1;i++){
-        colors.push(randomColor())
+        if(items[i] !== ""){
+            colors.push(randomColor())
+        }
     }
     draw()
 }
@@ -58,6 +76,8 @@ function draw(){
 
     let startDeg = currentDeg;
     for(let i = 0 ; i < items.length; i++, startDeg += step){
+
+        
         let endDeg = startDeg + step
 
         color = colors[i]
@@ -109,9 +129,10 @@ function draw(){
 
 
 let speed = 0
-let maxRotation = randomRange(360* 5, 360 * 7)
+let maxRotation = randomRange(360* 1, 360 * 2)
 let pause = false
 function animate(){
+    
     if(pause){
         win();
         return
@@ -123,12 +144,15 @@ function animate(){
     }
     currentDeg += speed
     draw()
+   
     window.requestAnimationFrame(animate);
+    
    
 }
 
 function spin(){
     
+    usualMusic.pause();
     if(speed != 0){
         return
     }
@@ -137,8 +161,12 @@ function spin(){
     currentDeg = 0
     createWheel()
     draw();
+    
+    spinBtn.enable = false;
+    //let inpu = document.getElementsByClassName("inputArea");
+    //inpu.setAttribute("onchange", "");
 
-    maxRotation = randomRange(360*30,360*40);
+    maxRotation = randomRange(360*3,360*4);
     //maxRotation = (360 * 6) - itemDegs['cat'].endDeg + 10
     itemDegs = {}
     console.log("max",maxRotation)
@@ -150,8 +178,15 @@ function spin(){
 
 
 function win(){
+  
+ winnerMusic.play();
     var item = document.getElementById("winner");
-    alert(`ohh,${item.innerHTML} congragulation you won.`);
+    Swal.fire({
+        title: `Congragulation ${item.innerHTML} !`,
+        text: "You Have Won the Game!",
+        icon: "success"
+      });
+
 }
 
 
