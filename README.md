@@ -1,7 +1,7 @@
 # Spin-The-Wheel
 HTML,CSS,JS
 
-![Screenshot_232](https://github.com/nvmao/Spin-The-Wheel/images/Screenshot 2025-03-05 015711)
+![Screenshot_232](https://github.com/nvmao/Spin-The-Wheel/images/Screenshot)
 
 🎡 Spinner Game
 
