@@ -9,7 +9,7 @@ Welcome to Spinner Game! 🎰 A fun and interactive web-based game where you spi
 
 🚀 Live Demo
 
-👉 Check it out here 
+👉 Check it out here https://spinner-game-fawn.vercel.app
 
 📌 Features
 
