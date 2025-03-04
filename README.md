@@ -1,7 +1,7 @@
 # Spin-The-Wheel
 HTML,CSS,JS
 
-![Screenshot_232](https://github.com/fseha-hagos/spinner-game/edit/master//images/Screenshot.png)
+![Screenshot_232](https://github.com/fseha-hagos/spinner-game/edit/master/images/Screenshot.png)
 
 🎡 Spinner Game
 
